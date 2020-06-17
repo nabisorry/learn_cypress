@@ -2,13 +2,6 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import store from './store/index.js';
 import RestaurantScreen from './components/RestaurantScreen';
-<<<<<<< HEAD
-
-const App = () => {
-  return (
-    <Provider store={store}>
-      <RestaurantScreen />
-=======
 import {createMuiTheme} from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import {ThemeProvider} from '@material-ui/styles';
@@ -38,7 +31,6 @@ const App = () => {
           <RestaurantScreen />
         </Container>
       </ThemeProvider>
->>>>>>> 099b9fb9a7af0feb6c728e98b249f6419c032ed7
     </Provider>
   );
 };

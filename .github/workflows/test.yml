@@ -20,8 +20,10 @@ jobs:
       # 모듈설치 --frozen-lockfile -> 잠금파일 버전으로 설치
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
+      # 유닛테스트
       - name: Unit Tests
         run: yarn test --watchAll=false
+      # E2E 테스트
       - name: E2E Tests
         uses: cypress-io/github-action@v1
         with:

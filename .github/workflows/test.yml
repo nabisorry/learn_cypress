@@ -1,9 +1,7 @@
 # 워크플로우 이름
 name: Test
 # 워크플로우를 트리거할 이벤트 (코드가 푸쉬될때 워크플로우 실행)
-on:
-  push:
-    branches: [master]
+on: [push]
 # 실행할 잡(여러개 가능)의 내용
 jobs:
   test:

@@ -1,14 +1,12 @@
 import React from 'react';
-import axios from 'axios';
+import RestaurantScreen from './components/RestaurantScreen';
 
 const App = () => {
-  axios
-    .get(
-      'https://api.outsidein.dev/2GNCwU49pmiNCHNA3b79bcKdGcFayUya/restaurants',
-    )
-    .then(res => console.log(res.data));
-
-  return <div>Hello, world.</div>;
+  return (
+    <div>
+      <RestaurantScreen />
+    </div>
+  );
 };
 
 export default App;

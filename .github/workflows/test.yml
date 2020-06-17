@@ -1,0 +1,29 @@
+# 워크플로우 이름
+name: Test
+# 워크플로우를 트리거할 이벤트 (코드가 푸쉬될때 워크플로우 실행)
+on: [push]
+# 실행할 잡(여러개 가능)의 내용
+jobs:
+  test:
+    # 단일 잡의 정보
+    name: Test
+    # 실행환경
+    runs-on: ubuntu-16.04
+    # job 스텝
+    # name ->
+    # run ->
+    #
+    steps:
+      - uses: actions/checkout@v1
+      # 모듈설치 --frozen-lockfile -> 잠금파일 버전으로 설치
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      # 유닛테스트
+      - name: Unit Tests
+        run: yarn test --watchAll=false
+      # E2E 테스트
+      - name: E2E Tests
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn start
+          wait-on: 'http://localhost:3000'

@@ -1,7 +1,7 @@
 describe('Listing Restaurants', () => {
   it('show restaurants from the server', () => {
-    const sushiPlace = 'Sushi Place';
-    const pizzaPlace = 'Pizza Place';
+    const pastaPlace = 'Pasta Place';
+    const saladPlace = 'Salad Place';
 
     // 404 not found 대신 상태를 반환
     cy.server({force404: true});
@@ -12,13 +12,13 @@ describe('Listing Restaurants', () => {
       url:
         'https://api.outsidein.dev/2GNCwU49pmiNCHNA3b79bcKdGcFayUya/restaurants',
       response: [
-        {id: 1, name: sushiPlace},
-        //{id: 2, name: pizzaPlace},
+        {id: 1, name: pastaPlace},
+        {id: 2, name: saladPlace},
       ],
     });
     // ./페이지에 방문
     cy.visit('/');
-    cy.contains(sushiPlace);
-    cy.contains(pizzaPlace);
+    cy.contains(pastaPlace);
+    cy.contains(saladPlace);
   });
 });

@@ -3,6 +3,6 @@ describe('Smoke Test', () => {
     // baseUrl + visit 에 방문했을때
     cy.visit('/');
     // 'Learn React' 텍스트가 있는지 확인한다.
-    cy.contains('Learn React');
+    cy.contains('Hello, world.');
   });
 });
